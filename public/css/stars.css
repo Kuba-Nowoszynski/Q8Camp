@@ -1,0 +1,58 @@
+.rating-stars {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.6rem;
+}
+
+.rating-stars i {
+  font-family: "FontAwesome";
+}
+
+.rating-stars i[data-rating="1"]:before {
+  color: red;
+  content: "1 \f005";
+}
+
+.rating-stars i[data-rating="2"]:before {
+  color: orange;
+  content: "2 \f005";
+}
+
+.rating-stars i[data-rating="3"]:before {
+  color: rgb(234, 234, 53);
+  content: "3 \f005";
+}
+
+.rating-stars i[data-rating="4"]:before {
+  color: limegreen;
+  content: "4 \f005";
+}
+
+.rating-stars i[data-rating="5"]:before {
+  color: green;
+  content: "5 \f005";
+}
+
+@media (max-width: 767px) {
+  .rating-stars i:before {
+    content: "\f005" !important;
+  }
+}
+
+.custom-size {
+  font-size: 0.7rem;
+  gap: 0.1em;
+  color: #f6ca2a;
+}
+
+@media (min-width: 576px) {
+  .custom-size {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 776px) {
+  .custom-size {
+    font-size: 2rem;
+  }
+}

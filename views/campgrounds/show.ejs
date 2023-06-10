@@ -1,0 +1,156 @@
+<% layout('layouts/boilerplate') %>
+<link rel="stylesheet" href="/css/stars.css" />
+
+<div class="row">
+  <div class="col-8">
+
+
+
+    <div class="card mb-3">
+  
+     <div id="campgroundCarouselIndicators" class="carousel slide carousel-fade "  data-bs-ride="carousel">
+    <%  if(camp.images.length>1){%>
+  <div class="carousel-indicators">
+    <% camp.images.forEach((el,i)=>{%>
+    <button type="button" data-bs-target="#campgroundCarouselIndicators" data-bs-slide-to="<%= i %>" class="<%= i===0?"active":"" %>" aria-current="<%= i===0?"true":"false" %>" aria-label="Slide <%= i+1 %>"></button>
+     <% })%>
+  </div>
+      <%  }%>
+  <div class="carousel-inner">
+    <%  if(camp.images.length<1){%>
+     <div class="carousel-item active">
+      <img crossorigin="anonymous" src="https://media.istockphoto.com/id/827243792/vector/adventure-camping-night-scene.jpg?s=612x612&w=0&k=20&c=cn67Ze-Oc-895KLVk78XYcHnJUE_p5eWh7JsW8AuW-E=" class="d-block w-100 rounded-top" alt="Default Campground Photo">
+    </div>
+    <%  }%>
+      <% for (const img of camp.images){%>
+   <div class="carousel-item <%= camp.images.indexOf(img)===0?"active":""  %>" data-bs-interval="3500">
+      <img crossorigin="anonymous" src="<%= img.cardImage %>" class="d-block w-100 rounded-top" alt="Campground Photo">
+    </div>
+      <% } %>
+  </div>
+   <%  if(camp.images.length>1){%>
+   <button class="carousel-control-prev" type="button" data-bs-target="#campgroundCarouselIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#campgroundCarouselIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+   <%  }%>
+</div>
+      
+
+      <div class="card-body">
+        <h5 class="card-title"><%= camp.title %></h5>
+        <p class="card-text"><%= camp.description %></p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item text-body-secondary">
+          <%= camp.location %>
+        </li>
+        <li class="list-group-item">$<%= camp.price %>/night</li>
+      </ul>
+      <% if(currentUser && camp.author.equals(currentUser._id)) {%>
+      <div class="card-body">
+        <a
+          class="card-link btn btn-info"
+          href="/campgrounds/<%= camp._id %>/edit"
+          >Edit the campground</a
+        >
+        <form
+          class="d-inline"
+          action="/campgrounds/<%= camp._id %>?_method=delete"
+          method="post"
+        >
+          <button class="btn btn-danger">Delete the campground</button>
+        </form>
+      </div>
+      <% }%>
+      <div class="card-footer text-body-secondary">
+        Created by <b><%= camp.author.username%></b>
+      </div>
+    </div>
+  </div>
+  <div class="col-4">
+   <div id='map' class="rounded" ></div>
+    <% if(currentUser){%>
+    <h2>Leave a Review</h2>
+    <form
+      action="/campgrounds/<%= camp._id %>/reviews"
+      class="mb-3 needs-validation"
+      method="post"
+      novalidate
+    >
+      <div class="mb-3">
+        <label class="form-label fs-5" for="rating">Rating</label>
+        <input
+          type="range"
+          min="1"
+          max="5"
+          step="1"
+          id="rating"
+          name="review[rating]"
+          class="form-range"
+        />
+        <div class="rating-stars">
+          <i class="fa fa-star" data-rating="1"></i>
+          <i class="fa fa-star" data-rating="2"></i>
+          <i class="fa fa-star" data-rating="3"></i>
+          <i class="fa fa-star" data-rating="4"></i>
+          <i class="fa fa-star" data-rating="5"></i>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label fs-5" for="body">Review</label>
+        <textarea
+          class="form-control"
+          name="review[body]"
+          id="body"
+          cols="30"
+          rows="3"
+          required
+        ></textarea>
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Please enter a review!</div>
+      </div>
+      <button class="btn btn-success">Submit</button>
+    </form>
+    <% }%> <% for (review of camp.reviews){ %>
+    <div class="card mb-3">
+      <div class="card-body">
+        <h6 class="card-title my-2 text-body-secondary mb-0">
+          Added by <b><%= review.author.username %></b>
+        </h6>
+        <div
+          class="d-flex justify-content-start my-2 custom-size"
+          aria-label="Rating of this item is <%= review.rating %> out of 5"
+        >
+          <% for( let i = 0; i < review?.rating; i++ ) { %>
+          <i class="fa fa-solid fa-star"></i>
+          <% } %> <% for( let i = 0; i < 5 - review?.rating; i++ ) { %>
+          <i class="fa fa-regular fa-star"></i>
+          <% } %>
+        </div>
+        <p class="card-text"><%= review.body %></p>
+        <% if(currentUser && review.author.equals(currentUser._id)) {%>
+        <form
+          action="/campgrounds/<%= camp._id %>/reviews/<%= review._id %>?_method=delete"
+          method="post"
+        >
+          <button class="btn btn-sm btn-outline-danger">
+            Delete the review
+          </button>
+        </form>
+        <% }%>
+      </div>
+    </div>
+    <% } %>
+  </div>
+</div>
+
+<script>
+const mapToken="<%-process.env.MAPBOX_TOKEN%>";
+const camp=<%-JSON.stringify(camp)%>
+</script>
+<script src="/js/showPageMap.js"></script>
