@@ -23,8 +23,7 @@ const campgroundRoutes = require("./routes/campgrounds");
 const reviewRoutes = require("./routes/reviews");
 const userRoutes = require("./routes/users");
 
-const dbUrl = process.env.DB_URL;
-// "mongodb://127.0.0.1:27017/yelp-camp";
+const dbUrl = process.env.DB_URL || "mongodb://127.0.0.1:27017/yelp-camp";
 
 mongoose
   .connect(dbUrl)
@@ -39,17 +38,19 @@ app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(morgan("dev"));
 
+const secret = process.env.SECRET || "thisshouldbeabettersecret!";
+
 const store = MongoStore.create({
   mongoUrl: dbUrl,
   touchAfter: 24 * 60 * 60,
   crypto: {
-    secret: "thisshouldbeabettersecret!",
+    secret,
   },
 });
 
 const sessionConfig = {
   name: "session",
-  secret: "thisshouldbeabettersecret!",
+  secret,
   resave: false,
   saveUninitialized: true,
   cookie: {
@@ -152,4 +153,5 @@ app.use((err, req, res, next) => {
   res.status(statusCode).render("campgrounds/error", { err });
 });
 
-app.listen(3000, () => console.log("Connected to port 3000"));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Connected to port ${port}`));
