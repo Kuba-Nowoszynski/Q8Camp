@@ -1,4 +1,8 @@
-function previewMultiple(event) {
+//display thumbnails of chosen images
+
+const imageInput = document.querySelector("#image");
+
+imageInput.addEventListener("change", (event) => {
   const form = document.querySelector("#formFile");
   form.innerHTML = "";
   let images = document.getElementById("image");
@@ -7,4 +11,4 @@ function previewMultiple(event) {
     let urls = URL.createObjectURL(event.target.files[i]);
     form.innerHTML += `<img src="${urls}">`;
   }
-}
+});

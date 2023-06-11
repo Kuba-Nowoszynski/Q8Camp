@@ -1,19 +1,21 @@
 <% layout('layouts/boilerplate') %>
 <div id="cluster-map" class="rounded"></div>
 
-<h1>Available Campgrounds</h1>
-<a href="/campgrounds/new" class="btn btn-dark mb-3">Add a new campground</a>
+<a href="/campgrounds/new" class="btn btn-dark btn-lg mt-5 mb-3"
+  >Add a new campground</a
+>
+<h1 class="mb-2">Available Campgrounds</h1>
+
 <div>
   <% for (const camp of campgrounds){ %>
   <div class="card mb-3">
     <div class="row">
       <div class="col-md-4">
-        <img
-          crossorigin="anonymous"
-          src="<%= camp.images.length>0? camp?.images[0].url : 'https://media.istockphoto.com/id/827243792/vector/adventure-camping-night-scene.jpg?s=612x612&w=0&k=20&c=cn67Ze-Oc-895KLVk78XYcHnJUE_p5eWh7JsW8AuW-E=' %>"
-          class="card-img-top"
-          alt="Campground"
-        />
+        <img crossorigin="anonymous" <% const
+        defImgs=['/images/indexDef1.png','/images/indexDef2.png','/images/indexDef3.jpg','/images/indexDef4.jpg'];
+        const rand=Math.floor(Math.random()*defImgs.length) %> src="<%=
+        camp.images.length>0? camp?.images[0].url : defImgs[rand] %>"
+        class="card-img-top rounded" alt="Campground" />
       </div>
       <div class="col-md-8">
         <div class="card-body">

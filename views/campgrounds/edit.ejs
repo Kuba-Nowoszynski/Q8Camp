@@ -38,10 +38,9 @@
         <div class="valid-feedback">Looks good!</div>
         <div class="invalid-feedback">Please enter a location!</div>
       </div>
+
       <div class="mb-3">
-        <label class="form-label"
-          >Choose image(s) - previous are also saved</label
-        >
+        <label class="form-label">Add new images</label>
         <div class="form-file custom-file">
           <input
             class="form-control custom-file-input"
@@ -49,34 +48,14 @@
             id="image"
             name="image"
             multiple
-            onchange="previewMultiple(event)"
           />
-          <div class="valid-feedback">Looks good!</div>
-          <div class="invalid-feedback">Please add at least one image!</div>
           <label for="image" class="form-label custom-file-label"></label>
         </div>
         <div id="formFile"></div>
       </div>
 
-      <!-- <div class="mb-3 d-flex flex-wrap">
-        <% camp.images.forEach((img,i)=>{ %>
-        <img
-          class="img-thumbnail"
-          src="<%= img.thumbnail%>"
-          alt="Campground Photo"
-        />
-        <div class="form-check my-auto">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            id="image-<%=i%>"
-            name="deleteImages[]"
-            value="<%= img.filename %>"
-          />
-          <label class="form-check-label" for="image-<%= i %>"> Delete? </label>
-        </div>
-        <% }) %>
-      </div> -->
+      <% if (camp.images.length){%>
+
       <div class="mb-1">
         <h6 class="text-danger fw-normal">Delete Images:</h6>
         <div class="row row-cols-1 row-cols-md-4 g-4 mb-3">
@@ -104,6 +83,7 @@
           <% }) %>
         </div>
       </div>
+      <% } %>
 
       <div class="mb-3">
         <label class="form-label" for="price">Price (per night):</label>
@@ -147,3 +127,4 @@
     <a href="/campgrounds/<%= camp._id %>">Back to the campground</a>
   </div>
 </div>
+<script src="/js/displayFilesImages.js"></script>
