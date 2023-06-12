@@ -14,8 +14,8 @@
         <img crossorigin="anonymous" <% const
         defImgs=['/images/indexDef1.png','/images/indexDef2.png','/images/indexDef3.jpg','/images/indexDef4.jpg'];
         const rand=Math.floor(Math.random()*defImgs.length) %> src="<%=
-        camp.images.length>0? camp?.images[0].url : defImgs[rand] %>"
-        class="card-img-top rounded" alt="Campground" />
+        camp.images.length>0? camp?.images[0].cardImage : defImgs[rand] %>"
+        class="card-img-top rounded h-100" alt="Campground" />
       </div>
       <div class="col-md-8">
         <div class="card-body">
