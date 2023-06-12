@@ -148,9 +148,9 @@ app.all("*", (req, res, next) => {
 
 app.use((err, req, res, next) => {
   const { statusCode = 500 } = err;
+  console.log(err.message);
   // if (!err.message)
   err.message = "Oops, something went wrong :( ";
-  console.log(err);
   res.status(statusCode).render("campgrounds/error", { err });
 });
 
