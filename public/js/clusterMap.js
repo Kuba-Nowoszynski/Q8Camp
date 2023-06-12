@@ -5,7 +5,7 @@ const map = new mapboxgl.Map({
   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
   style: "mapbox://styles/mapbox/light-v11",
   center: [-103.5917, 40.6699],
-  zoom: 3,
+  zoom: 2.9,
 });
 
 map.on("load", () => {
@@ -36,12 +36,12 @@ map.on("load", () => {
         "step",
         ["get", "point_count"],
         "#71f79f",
-        20,
+        3,
         "#3DD6D0",
-        30,
+        5,
         "#95A78D",
       ],
-      "circle-radius": ["step", ["get", "point_count"], 20, 20, 30, 30, 40],
+      "circle-radius": ["step", ["get", "point_count"], 20, 3, 30, 5, 40],
     },
   });
 
