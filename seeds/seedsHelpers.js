@@ -42,3 +42,26 @@ module.exports.places = [
   "Cliffs",
   "Hollow",
 ];
+
+module.exports.campgroundDescriptions = [
+  "Escape to the serene beauty of our campground, nestled amidst towering pines and offering breathtaking mountain views.",
+  "Experience nature at its best in our spacious campground, surrounded by lush greenery and a crystal-clear lake for swimming and fishing.",
+  "Immerse yourself in the tranquility of our riverside campground, where you can relax by the water's edge or go kayaking along the gentle currents.",
+  "Discover the ultimate camping adventure in our wilderness campground, where you can hike through pristine trails and spot wildlife in its natural habitat.",
+  "Unwind and recharge in our family-friendly campground, complete with playgrounds, picnic areas, and organized activities for all ages.",
+  "Indulge in a rustic camping experience in our secluded campground, offering private campsites and a campfire under the starry night sky.",
+  "Escape the hustle and bustle of city life at our peaceful campground, where you can enjoy stargazing and campfire stories under the towering trees.",
+  "Embark on a memorable camping trip in our coastal campground, where you can fall asleep to the sound of crashing waves and wake up to stunning ocean views.",
+  "Experience the thrill of adventure in our campground, located near a national park with opportunities for hiking, rock climbing, and wildlife spotting.",
+  "Enjoy a blissful retreat in our lakeside campground, with pristine waters perfect for swimming, boating, and fishing.",
+  "Immerse yourself in the rich history of the area at our historic campground, nestled near cultural landmarks and offering guided tours.",
+  "Escape to our dog-friendly campground, where you and your furry friends can explore nature trails, play fetch by the lake, and relax in pet-friendly accommodations.",
+  "Discover a hidden gem in our off-the-grid campground, where you can disconnect from technology and reconnect with nature.",
+  "Unleash your adventurous spirit in our adrenaline-pumping campground, offering thrilling activities like zip-lining, mountain biking, and white-water rafting.",
+  "Relax and rejuvenate in our wellness-focused campground, with yoga classes, meditation sessions, and spa treatments surrounded by natural beauty.",
+  "Immerse yourself in the vibrant colors of fall at our autumn-themed campground, where you can enjoy leaf-peeping hikes and cozy campfire evenings.",
+  "Experience the charm of the countryside in our farm-themed campground, where you can interact with friendly animals, go horseback riding, and enjoy fresh produce from the farm.",
+  "Escape to our luxury campground, where you can indulge in glamping tents, gourmet dining, and a host of exclusive amenities.",
+  "Unwind in our adults-only campground, offering a peaceful and serene atmosphere for relaxation, meditation, and quiet contemplation.",
+  "Embark on a fishing adventure at our angler's paradise campground, with prime fishing spots and expert guides to help you reel in the big catch.",
+];

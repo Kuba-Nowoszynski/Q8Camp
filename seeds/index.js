@@ -1,7 +1,12 @@
 const mongoose = require("mongoose");
 const Campground = require("../models/campground");
 const cities = require("./cities");
-const { descriptors, places } = require("./seedsHelpers");
+const {
+  descriptors,
+  places,
+  campgroundDescriptions,
+} = require("./seedsHelpers");
+const dbUrl = process.env.DB_URL || "mongodb://127.0.0.1:27017/yelp-camp";
 
 mongoose
   .connect("mongodb://127.0.0.1:27017/yelp-camp")
@@ -12,18 +17,17 @@ const sample = (arr) => arr[Math.floor(Math.random() * arr.length)];
 
 const seedDB = async () => {
   await Campground.deleteMany({});
-  for (let i = 0; i < 400; i++) {
+  for (let i = 0; i < 300; i++) {
     const cityRand = sample(cities);
     const camp = new Campground({
-      author: "6458d65c0bce7c3fd4ee2f58",
+      author: "6458d65c0bce7c3fd4ee2f58", //Kuba
       title: `${sample(descriptors)} ${sample(places)}`,
       geometry: {
         type: "Point",
         coordinates: [cityRand.longitude, cityRand.latitude],
       },
       location: `${cityRand.city}, ${cityRand.state}`,
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil sed cupiditate omnis vitae fugiat debitis ipsa ratione aspernatur mollitia deleniti natus maiores, placeat beatae qui obcaecati ut ab non quisquam!",
+      description: sample(campgroundDescriptions),
       price: Math.floor(Math.random() * 20 + 10),
       images: {
         url: "https://source.unsplash.com/random/?camping",
