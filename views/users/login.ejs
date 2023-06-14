@@ -8,11 +8,11 @@
       <div class="card shadow">
         <img
           src="https://images.unsplash.com/photo-1571863533956-01c88e79957e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80"
-          alt=""
+          alt="mountain camp photo"
           class="card-img-top"
         />
         <div class="card-body">
-          <h5 class="card-title">Login</h5>
+          <h5 class="card-title">Log in</h5>
           <form action="/login" method="POST" class="validated-form" novalidate>
             <div class="mb-3">
               <label class="form-label" for="username">Username</label>
@@ -40,7 +40,17 @@
               <div class="valid-feedback">Looks good!</div>
               <div class="invalid-feedback">Please enter a valid password!</div>
             </div>
-            <button class="btn btn-outline-dark btn-block">Log in</button>
+            <div class="d-flex justify-content-around">
+              <button class="btn btn-outline-dark btn-block">Log in</button>
+              <a href="/register"
+                ><button
+                  type="button"
+                  class="btn btn-outline-secondary btn-block"
+                >
+                  Register
+                </button></a
+              >
+            </div>
           </form>
         </div>
       </div>
