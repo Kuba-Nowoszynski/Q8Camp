@@ -4,6 +4,11 @@ Welcome to Q8 Camps, your destination for discovering and sharing campgrounds. T
 
 ## Overview
 ![Campground Platform](https://github.com/Kuba-Nowoszynski/Q8Camp/assets/117540841/575d4823-c850-4984-a655-c4d596fc77b6)
+![image](https://github.com/Kuba-Nowoszynski/Q8Camp/assets/117540841/263c733c-613b-499f-85fc-b91647ebc1e0)
+![image](https://github.com/Kuba-Nowoszynski/Q8Camp/assets/117540841/c9cc1c33-f35b-41e3-a102-99cf619f6d15)
+![image](https://github.com/Kuba-Nowoszynski/Q8Camp/assets/117540841/15b214aa-a9aa-4ef3-8de7-488ca0014d8c)
+
+
 
 ### Built With
 The Campground Platform was developed using the following technologies:
@@ -22,7 +27,7 @@ The Campground Platform was developed using the following technologies:
 - Image Storage: Utilize Cloudinary for efficient image management.
 
 ## How To Use
-Discover the world of camping on our Campground Platform by visiting our live version [here](https://your-campground-platform.herokuapp.com/). Whether you're an avid camper or a first-timer, our platform has something for everyone. Explore, rate, and share your favorite campgrounds today.
+Discover the world of camping on Q8 Camps by visiting live version [here](https://q8-camp.onrender.com/). Whether you're an avid camper or a first-timer, this platform has something for everyone. Explore, rate, and share your favorite campgrounds today.
 
-Experience camping in a whole new way with our feature-rich Campground Platform. From interactive maps to user reviews, this platform has everything you need to plan your next outdoor adventure. Join us now and embark on unforgettable camping experiences!
+Experience camping in a whole new way with feature-rich Campground Platform. From interactive maps to user reviews, this platform has everything you need to plan your next outdoor adventure. Join us now and embark on unforgettable camping experiences!
 
