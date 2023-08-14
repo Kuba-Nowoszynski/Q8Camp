@@ -4,7 +4,7 @@ Welcome to Q8 Camps, your destination for discovering and sharing campgrounds. T
 
 ## Overview
 ![Campground Platform](https://github.com/Kuba-Nowoszynski/Q8Camp/assets/117540841/575d4823-c850-4984-a655-c4d596fc77b6)
-![image](https://github.com/Kuba-Nowoszynski/Q8Camp/assets/117540841/263c733c-613b-499f-85fc-b91647ebc1e0)
+![image](https://github.com/Kuba-Nowoszynski/Q8Camp/assets/117540841/1adf68e6-723e-4358-b5c7-d92eb3fb5276)
 ![image](https://github.com/Kuba-Nowoszynski/Q8Camp/assets/117540841/c9cc1c33-f35b-41e3-a102-99cf619f6d15)
 ![image](https://github.com/Kuba-Nowoszynski/Q8Camp/assets/117540841/15b214aa-a9aa-4ef3-8de7-488ca0014d8c)
 
